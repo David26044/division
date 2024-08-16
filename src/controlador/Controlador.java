@@ -4,6 +4,10 @@
  */
 package controlador;
 
+import interfaz.PanelOperadores;
+import interfaz.PanelOperandos;
+import interfaz.PanelResultado;
+import javax.swing.JOptionPane;
 import mundo.Dividir;
 
 /**
@@ -12,12 +16,35 @@ import mundo.Dividir;
  */
 public class Controlador {
  
-    private Dividir div;
+    private Dividir dividir;
+    private PanelOperadores pnlOperadores;
+    private PanelOperandos pnlOperandos;
+    private PanelResultado pnlResultado;
     
     public Controlador(){
-        this.div = new Dividir();
+        dividir = new Dividir();
     }
     public float send(int[] operadores, int operando){
-        return div.dividir(operadores, operando);
+        return dividir.dividir(operadores, operando);
+    }
+    
+    public void conectar(PanelOperadores pnlOperadores, PanelOperandos pnlOperandos, PanelResultado pnlResultado){
+        
+        this.pnlOperadores = pnlOperadores;
+        this.pnlOperandos = pnlOperandos;
+        this.pnlResultado = pnlResultado;
+        
+    }
+
+    public void resultado(){
+        try{
+        String res = String.valueOf(dividir.dividir(pnlOperandos.getDates(), pnlOperadores.getOption()));
+        pnlResultado.setResultado(res);
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "NumberFormatException");
+        }catch(ArithmeticException e){
+            JOptionPane.showMessageDialog(null, "ArithmeticException");
+        }
+        
     }
 }

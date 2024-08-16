@@ -10,25 +10,22 @@ package mundo;
  */
 public class Dividir {
 
-    int dividendo, divisor, operador;
 
     public Dividir() {
 
     }
 
     public float dividir(int[] operandos, int operador) {
-        this.dividendo = operandos[0];
-        this.divisor = operandos[1];
+        int dividendo = operandos[0];
+        int divisor = operandos[1];
 
-        this.operador = operador;
-
-        if (this.operador == 0) {
+        if (operador == 0) {
             return (float) dividendo / divisor;
         }
-        if (this.operador == 1) {
+        if (operador == 1) {
             return dividendo % divisor;
         }
-        if (this.operador == 2) {
+        if (operador == 2) {
             return (int) dividendo / divisor;
         }
         return -1;

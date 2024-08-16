@@ -44,12 +44,15 @@ public class PanelResultado extends JPanel implements ActionListener {
 
     }
 
+    public void setResultado(String resultado){
+        txtResultado.setText(String.valueOf(resultado));
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("Aceptar")) {
-            txtResultado.setText(String.valueOf(ctrl.send(pnlOperandos.getDates(), pnlOperadores.getOption())));
+            ctrl.resultado();
         }
-
     }
 
 }

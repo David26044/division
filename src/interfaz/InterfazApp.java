@@ -13,10 +13,10 @@ import javax.swing.JFrame;
  */
 public class InterfazApp extends JFrame {
 
-    PanelOperadores pnlOperadores;
-    PanelOperandos pnlOperandos;
-    PanelResultado pnlResultado;
-    Controlador ctrl;
+    private PanelOperadores pnlOperadores;
+    private PanelOperandos pnlOperandos;
+    private PanelResultado pnlResultado;
+    private Controlador ctrl;
     
     public InterfazApp(Controlador ctrl) {
 
@@ -39,6 +39,7 @@ public class InterfazApp extends JFrame {
         add(pnlResultado);
         
         this.ctrl = ctrl;
+        ctrl.conectar(pnlOperadores, pnlOperandos, pnlResultado);
         
     }
 

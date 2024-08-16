@@ -41,17 +41,15 @@ public class PanelOperandos extends JPanel {
         txtDivisor.setBounds(120, 35, 100, 30);
         add(txtDivisor);
 
-        }
-        
-        public int[] getDates(){
+    }
 
-            int[] x =new int[2];
-            x[0] = Integer.parseInt(txtDividendo.getText());
-            x[1]= Integer.parseInt(txtDivisor.getText());
-                    
-            return x;
-        }
-    
-        
-        
+    public int[] getDates() {
+
+        int[] x = new int[2];
+        x[0] = Integer.parseInt(txtDividendo.getText());
+        x[1] = Integer.parseInt(txtDivisor.getText());
+
+        return x;
+    }
+
 }
